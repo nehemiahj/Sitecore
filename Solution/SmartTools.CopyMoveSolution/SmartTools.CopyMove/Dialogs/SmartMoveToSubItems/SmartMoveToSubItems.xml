@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<control xmlns:def="Definition" xmlns="http://schemas.sitecore.net/Visual-Studio-Intellisense">
+  <SmartMoveToSubItems>
+    <FormDialog Icon="Core3/24x24/move_to_folder.png" Header="Move SubItems To"
+      Text="Select the location where you want to move all the sub items to." OKButton="Move">
+
+      <CodeBeside Type="SmartTools.CopyMove.SmartMoveToSubItemsForm,SmartTools.CopyMove"/>
+
+      <DataContext ID="DataContext" Root="/"/>
+
+      <GridPanel Width="100%" Height="100%" Style="table-layout:fixed">
+        <Scrollbox Width="100%" Height="100%" Class="scScrollbox scFixSize scFixSize4" Background="white" Border="1px inset" Padding="0" GridPanel.Height="100%">
+          <TreeviewEx ID="Treeview" DataContext="DataContext" Click="SelectTreeNode" ContextMenu='Treeview.GetContextMenu("contextmenu")' />
+        </Scrollbox>
+
+        <Border Padding="4px 0px 4px 0px">
+          <GridPanel Width="100%" Columns="2">
+
+            <Border Padding="0px 4px 0px 0px">
+              <Literal Text="Name:"/>
+            </Border>
+
+            <Edit ID="Filename" Width="100%" GridPanel.Width="100%"/>
+          </GridPanel>
+        </Border>
+
+      </GridPanel>
+
+    </FormDialog>
+  </SmartMoveToSubItems>
+</control>
+
